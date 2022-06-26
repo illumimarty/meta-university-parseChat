@@ -32,7 +32,7 @@
 - (IBAction)registerUser:(id)sender {
     
     // Check if fields are empty. If YES, do not continue to block
-    if ([self isEitherFieldEmpty:self.usernameTextField.text pass:self.passwordTextField.text]) {
+    if ([self isEitherFieldEmpty]) {
         [self showEmptyFieldAlert];
         return;
     }
@@ -60,7 +60,7 @@
 - (IBAction)loginUser:(id)sender {
     
     // Check if fields are empty. If YES, do not continue to block
-    if ([self isEitherFieldEmpty:self.usernameTextField.text pass:self.passwordTextField.text]) {
+    if ([self isEitherFieldEmpty]) {
         [self showEmptyFieldAlert];
         return;
     }
@@ -93,9 +93,8 @@
     [self presentViewController:alert animated:YES completion:^{}];
 }
 
-- (bool)isEitherFieldEmpty: (NSString *)user pass:(NSString *)pass {
-    bool val = ([user isEqual:@""] || [pass isEqual:@""]);
-    return val;
+- (bool)isEitherFieldEmpty {
+    return ([self.usernameTextField.text isEqual:@""] || [self.passwordTextField.text isEqual:@""]);
 }
 
 @end
