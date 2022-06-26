@@ -14,6 +14,7 @@
 		95FBC8DA286804BA00DD6823 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95FBC8D9286804BA00DD6823 /* Assets.xcassets */; };
 		95FBC8DD286804BA00DD6823 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95FBC8DB286804BA00DD6823 /* LaunchScreen.storyboard */; };
 		95FBC8E0286804BA00DD6823 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FBC8DF286804BA00DD6823 /* main.m */; };
+		95FBC8E92868091600DD6823 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FBC8E82868091600DD6823 /* LoginViewController.m */; };
 		E82F5A7CF58B547B90546993 /* Pods_Parse_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EB668DCC821A9CE42E35BC /* Pods_Parse_Chat.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,8 @@
 		95FBC8DC286804BA00DD6823 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95FBC8DE286804BA00DD6823 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95FBC8DF286804BA00DD6823 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		95FBC8E72868091600DD6823 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		95FBC8E82868091600DD6823 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +79,7 @@
 		95FBC8CC286804B900DD6823 /* Parse Chat */ = {
 			isa = PBXGroup;
 			children = (
+				95FBC8E6286808FF00DD6823 /* View Controllers */,
 				95FBC8CD286804B900DD6823 /* AppDelegate.h */,
 				95FBC8CE286804B900DD6823 /* AppDelegate.m */,
 				95FBC8D0286804B900DD6823 /* SceneDelegate.h */,
@@ -91,13 +95,21 @@
 			path = "Parse Chat";
 			sourceTree = "<group>";
 		};
+		95FBC8E6286808FF00DD6823 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				95FBC8E72868091600DD6823 /* LoginViewController.h */,
+				95FBC8E82868091600DD6823 /* LoginViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		984EE04C7D156645199AA293 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				594558DFA40E639AA1C6948A /* Pods-Parse Chat.debug.xcconfig */,
 				2D7A267B271D9BC399F0E9C5 /* Pods-Parse Chat.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -219,6 +231,7 @@
 				95FBC8CF286804B900DD6823 /* AppDelegate.m in Sources */,
 				95FBC8E0286804BA00DD6823 /* main.m in Sources */,
 				95FBC8D2286804B900DD6823 /* SceneDelegate.m in Sources */,
+				95FBC8E92868091600DD6823 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
