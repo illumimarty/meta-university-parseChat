@@ -42,11 +42,14 @@
 
 - (IBAction)sendMessage:(id)sender {
     
+    PFUser *user = PFUser.currentUser;
+    
     // 4. initialize Parse object
     PFObject *chatMessage = [PFObject objectWithClassName:@"Message_FBU2021"];
     
     // 5. Create a 'text' key and store message to object
     chatMessage[@"text"] = self.chatField.text;
+    chatMessage[@"user"] = user;
 
     // 6. Send out message
     [chatMessage saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
@@ -68,6 +71,13 @@
     ChatCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChatCell" forIndexPath:indexPath];
     
     PFObject *chatObject = self.chatArray[indexPath.row];
+    PFUser *user = chatObject[@"user"];
+    
+    if (user) {
+        cell.usernameLabel.text = user.username;
+    } else {
+        cell.usernameLabel.text = @"🤪";
+    }
     
     cell.messageString.text = chatObject[@"text"];
     
@@ -86,6 +96,7 @@
 - (void)fetchMessages {
     // construct query
     PFQuery *query = [PFQuery queryWithClassName:@"Message_FBU2021"];
+    [query includeKey:@"user"];
     [query orderByDescending:@"createdAt"];
 //    [query whereKey:@"likesCount" greaterThan:@100];
     query.limit = 20;

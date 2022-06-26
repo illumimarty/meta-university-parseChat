@@ -92,29 +92,41 @@
                                 <rect key="frame" x="0.0" y="106" width="414" height="736"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCell" id="LNJ-38-NmP" customClass="ChatCell">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="37"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCell" rowHeight="69" id="LNJ-38-NmP" customClass="ChatCell">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LNJ-38-NmP" id="fzv-5O-Cw2">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="37"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wow very cool, thanks for sharing!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1L-F5-9p5">
-                                                    <rect key="frame" x="8" y="8" width="398" height="21"/>
+                                                    <rect key="frame" x="8" y="37" width="398" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Marty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIn-1A-ETI">
+                                                    <rect key="frame" x="8" y="8" width="398" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="dIn-1A-ETI" firstAttribute="top" secondItem="fzv-5O-Cw2" secondAttribute="top" constant="8" id="MFL-Xf-JNc"/>
+                                                <constraint firstItem="t1L-F5-9p5" firstAttribute="top" secondItem="dIn-1A-ETI" secondAttribute="bottom" constant="8" id="MKZ-fE-Wqt"/>
+                                                <constraint firstAttribute="trailing" secondItem="t1L-F5-9p5" secondAttribute="trailing" constant="8" id="ReG-ml-iHv"/>
+                                                <constraint firstAttribute="bottom" secondItem="t1L-F5-9p5" secondAttribute="bottom" constant="8" id="RoP-oE-F0H"/>
+                                                <constraint firstItem="dIn-1A-ETI" firstAttribute="leading" secondItem="t1L-F5-9p5" secondAttribute="leading" id="mou-yS-9uw"/>
                                                 <constraint firstAttribute="trailing" secondItem="t1L-F5-9p5" secondAttribute="trailing" constant="8" id="n9A-xT-MoC"/>
+                                                <constraint firstAttribute="trailing" secondItem="dIn-1A-ETI" secondAttribute="trailing" constant="8" id="ntc-F8-fL8"/>
                                                 <constraint firstItem="t1L-F5-9p5" firstAttribute="leading" secondItem="fzv-5O-Cw2" secondAttribute="leading" constant="8" id="qcQ-H5-jH1"/>
-                                                <constraint firstItem="t1L-F5-9p5" firstAttribute="top" secondItem="fzv-5O-Cw2" secondAttribute="top" constant="8" id="seb-WQ-TXz"/>
                                                 <constraint firstAttribute="bottom" secondItem="t1L-F5-9p5" secondAttribute="bottom" constant="8" id="zHp-AY-I1A"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="messageString" destination="t1L-F5-9p5" id="lId-m2-WK5"/>
+                                            <outlet property="usernameLabel" destination="dIn-1A-ETI" id="C4q-sx-Lp4"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
