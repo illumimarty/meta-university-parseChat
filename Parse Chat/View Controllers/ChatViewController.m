@@ -6,9 +6,11 @@
 //
 
 #import "ChatViewController.h"
+#import "ChatCell.h"
 #import <Parse/Parse.h>
 
-@interface ChatViewController ()
+@interface ChatViewController () <UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -17,6 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
 }
 
 /*
@@ -50,4 +56,17 @@
     self.chatField.text = @"";
 
 }
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    
+    ChatCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChatCell" forIndexPath:indexPath];
+    
+    cell.messageString.text = @"hi!";
+    
+    return cell;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    <#code#>
+}
+
 @end
