@@ -11,6 +11,7 @@
 
 @interface ChatViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSArray *chatArray;
 
 @end
 
@@ -22,6 +23,10 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    // calls onTimer method every 60 seconds
+    [self fetchMessages];
+    [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(onTimer) userInfo:nil repeats:true];
     
 }
 
@@ -54,19 +59,47 @@
     
     // 7. Clear text field
     self.chatField.text = @"";
+    
+    [self fetchMessages];
 
 }
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
     ChatCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChatCell" forIndexPath:indexPath];
     
-    cell.messageString.text = @"hi!";
+    PFObject *chatObject = self.chatArray[indexPath.row];
+    
+    cell.messageString.text = chatObject[@"text"];
     
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    <#code#>
+    return 20;
+}
+
+- (void)onTimer {
+    [self fetchMessages];
+    [self.tableView reloadData];
+}
+
+- (void)fetchMessages {
+    // construct query
+    PFQuery *query = [PFQuery queryWithClassName:@"Message_FBU2021"];
+    [query orderByDescending:@"createdAt"];
+//    [query whereKey:@"likesCount" greaterThan:@100];
+    query.limit = 20;
+
+    // fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+        if (posts != nil) {
+            // do something with the array of object returned by the call
+            self.chatArray = [posts copy];
+            [self.tableView reloadData];
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
 }
 
 @end
