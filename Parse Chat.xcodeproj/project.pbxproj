@@ -15,6 +15,7 @@
 		95FBC8DD286804BA00DD6823 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95FBC8DB286804BA00DD6823 /* LaunchScreen.storyboard */; };
 		95FBC8E0286804BA00DD6823 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FBC8DF286804BA00DD6823 /* main.m */; };
 		95FBC8E92868091600DD6823 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FBC8E82868091600DD6823 /* LoginViewController.m */; };
+		95FBC8EC2868142E00DD6823 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FBC8EB2868142E00DD6823 /* ChatViewController.m */; };
 		E82F5A7CF58B547B90546993 /* Pods_Parse_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EB668DCC821A9CE42E35BC /* Pods_Parse_Chat.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,8 @@
 		95FBC8DF286804BA00DD6823 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		95FBC8E72868091600DD6823 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		95FBC8E82868091600DD6823 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		95FBC8EA2868142E00DD6823 /* ChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		95FBC8EB2868142E00DD6823 /* ChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +103,8 @@
 			children = (
 				95FBC8E72868091600DD6823 /* LoginViewController.h */,
 				95FBC8E82868091600DD6823 /* LoginViewController.m */,
+				95FBC8EA2868142E00DD6823 /* ChatViewController.h */,
+				95FBC8EB2868142E00DD6823 /* ChatViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 			files = (
 				95FBC8D5286804B900DD6823 /* ViewController.m in Sources */,
 				95FBC8CF286804B900DD6823 /* AppDelegate.m in Sources */,
+				95FBC8EC2868142E00DD6823 /* ChatViewController.m in Sources */,
 				95FBC8E0286804BA00DD6823 /* main.m in Sources */,
 				95FBC8D2286804B900DD6823 /* SceneDelegate.m in Sources */,
 				95FBC8E92868091600DD6823 /* LoginViewController.m in Sources */,
